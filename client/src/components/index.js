@@ -12,7 +12,6 @@ import {
 } from "./shop";
 import { DashboardAdmin, Categories, Products, Orders } from "./admin";
 import { UserProfile, UserOrders, SettingUser } from "./shop/dashboardUser";
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 /* Routing All page will be here */
@@ -24,6 +23,7 @@ const Routes = (props) => {
         <Route exact path="/" component={Home} />
         <Route exact path="/wish-list" component={WishList} />
         <Route exact path="/products/:id" component={ProductDetails} />
+        
         <Route
           exact
           path="/products/category/:catId"
@@ -79,6 +79,7 @@ const Routes = (props) => {
 
         {/* 404 Page */}
         <Route component={PageNotFound} />
+
       </Switch>
     </Router>
   );

@@ -1,6 +1,20 @@
 import axios from "axios";
 const apiURL = process.env.REACT_APP_API_URL;
 
+
+export const getDailyStatistics = async (date) => {
+  try {
+    // Gọi API với endpoint mới để lấy dữ liệu thống kê trong ngày
+    let res = await axios.post(`${apiURL}/api/statistics/daily`, {
+      date, // Truyền tham số ngày
+    });
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
 export const DashboardData = async () => {
   try {
     let res = await axios.post(`${apiURL}/api/customize/dashboard-data`);
@@ -41,3 +55,4 @@ export const postDeleteImage = async (id) => {
     console.log(error);
   }
 };
+

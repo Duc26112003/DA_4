@@ -1,7 +1,6 @@
 import React, { Fragment, useContext } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation, Link } from "react-router-dom";
 import "./style.css";
-
 import { logout } from "./Action";
 import { LayoutContext } from "../index";
 import { isAdmin } from "../auth/fetchApi";
@@ -17,7 +16,7 @@ const Navber = (props) => {
       ? dispatch({ type: "hamburgerToggle", payload: false })
       : dispatch({ type: "hamburgerToggle", payload: true });
 
-  const loginModalOpen = () =>
+  const loginModalOpen = () =>  
     data.loginSignupModal
       ? dispatch({ type: "loginSignupModalToggle", payload: false })
       : dispatch({ type: "loginSignupModalToggle", payload: true });
@@ -73,7 +72,7 @@ const Navber = (props) => {
               style={{ letterSpacing: "0.10rem" }}
               className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
             >
-              Hayroo
+              AN PHAT
             </span>
           </div>
           <div
@@ -81,7 +80,7 @@ const Navber = (props) => {
             style={{ letterSpacing: "0.70rem" }}
             className="hidden lg:block flex items-left col-span-1 text-center text-gray-800 font-bold tracking-widest uppercase text-2xl cursor-pointer"
           >
-            Hayroo
+            AN PHAT
           </div>
           <div className="flex items-right col-span-2 lg:col-span-1 flex justify-end">
             {/*  WishList Page Button */}
@@ -91,11 +90,10 @@ const Navber = (props) => {
               title="Wishlist"
             >
               <svg
-                className={`${
-                  location.pathname === "/wish-list"
-                    ? "fill-current text-gray-800"
-                    : ""
-                } w-8 h-8 text-gray-600 cursor-pointer`}
+                className={`${location.pathname === "/wish-list"
+                  ? "fill-current text-gray-800"
+                  : ""
+                  } w-8 h-8 text-gray-600 cursor-pointer`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

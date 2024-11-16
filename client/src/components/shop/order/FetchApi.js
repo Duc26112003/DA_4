@@ -30,3 +30,13 @@ export const createOrder = async (orderData) => {
     console.log(error);
   }
 };
+
+// export const listOrder = async (orderData) => {
+//   try {
+//     let res = await axios.post(`${apiURL}/api/order/list-order`, orderData);
+//     return res.data;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
